@@ -102,9 +102,13 @@ img {
 .story-card,
 .stats-card,
 .skills-card,
+.journey-card,
+.impact-card,
+.service-card,
 .project-card,
 .certificate-card,
 .progress-card,
+.goal-panel,
 .contact-panel {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -241,10 +245,22 @@ h3 {
 }
 
 .skills-layout,
+.impact-grid,
+.journey-grid,
+.services-grid,
 .project-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.2rem;
+}
+
+.impact-grid,
+.services-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.journey-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .skill-pills {
@@ -275,6 +291,12 @@ h3 {
 .project-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 24px 50px rgba(55, 41, 21, 0.16);
+}
+
+.impact-card,
+.service-card,
+.goal-panel {
+  padding: 1.8rem;
 }
 
 .project-links {
@@ -332,6 +354,10 @@ h3 {
   padding: 2rem;
 }
 
+.journey-card {
+  padding: 1.8rem;
+}
+
 .contact-links {
   display: flex;
   flex-wrap: wrap;
@@ -354,6 +380,9 @@ h3 {
   .hero,
   .about-grid,
   .skills-layout,
+  .impact-grid,
+  .journey-grid,
+  .services-grid,
   .project-grid,
   .certificate-card {
     grid-template-columns: 1fr;
@@ -379,7 +408,11 @@ h3 {
   .story-card,
   .stats-card,
   .skills-card,
+  .journey-card,
+  .impact-card,
+  .service-card,
   .project-card,
+  .goal-panel,
   .contact-panel {
     padding: 1.4rem;
   }
@@ -393,8 +426,12 @@ h3 {
   .story-card,
   .stats-card,
   .skills-card,
+  .journey-card,
+  .impact-card,
+  .service-card,
   .project-card,
   .certificate-card,
+  .goal-panel,
   .contact-panel {
     border-radius: 22px;
   }
