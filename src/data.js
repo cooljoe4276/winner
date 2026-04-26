@@ -1,7 +1,9 @@
 export const navigation = [
   { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
+  { label: "Journey", href: "#journey" },
   { label: "Projects", href: "#projects" },
+  { label: "Certificates", href: "#certificates" },
   { label: "Vision", href: "#vision" },
   { label: "Contact", href: "#contact" },
 ];
@@ -60,6 +62,52 @@ export const projects = [
   },
 ];
 
+export const journey = [
+  {
+    label: "Education",
+    title: "Anchor University, Lagos",
+    description:
+      "B.Sc. Computer Science student building practical experience alongside academic work, with expected graduation in 2027.",
+  },
+  {
+    label: "Experience",
+    title: "Sales and Customer Support",
+    description:
+      "Experience at Winsomlight Enterprise strengthened communication, customer handling, and practical problem-solving under real operating conditions.",
+  },
+  {
+    label: "Current Focus",
+    title: "Frontend, Backend, and Platform Thinking",
+    description:
+      "Actively expanding from frontend execution into full-stack capability, product systems, and scalable technology opportunities.",
+  },
+];
+
+export const certificates = [
+  {
+    label: "Completed",
+    title: "Certificate of Excellence",
+    description:
+      "Awarded for excellent performance in the Digital Humanities course, with focus on Mikrotik Computer Networking through the Institute of Digital Humanities and Technologies in partnership with Anchor University.",
+    image: "/winner-certificate.jpg",
+    imageAlt: "Certificate of Excellence awarded to Winner Nwaeme",
+  },
+  {
+    label: "In Progress",
+    title: "Mikrotik Certification Examination",
+    description:
+      "Current certification path focused on networking, infrastructure fundamentals, and deeper technical growth.",
+    file: "/mikrotik-certification-progress.pdf",
+  },
+  {
+    label: "Supporting Document",
+    title: "Additional Certificate Resource",
+    description:
+      "Supporting certificate document included as a reference file and downloadable portfolio asset.",
+    file: "/additional-certificate.pdf",
+  },
+];
+
 export const socialLinks = [
   {
     label: "GitHub",
@@ -68,5 +116,9 @@ export const socialLinks = [
   {
     label: "LinkedIn",
     href: "https://www.linkedin.com/",
+  },
+  {
+    label: "Download Certificate",
+    href: "/additional-certificate.pdf",
   },
 ];

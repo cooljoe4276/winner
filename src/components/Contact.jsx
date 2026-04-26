@@ -9,7 +9,7 @@ export default function Contact() {
         <SectionHeading
           eyebrow="Contact"
           title="Open to serious collaboration, product work, and strategic opportunities"
-          copy="The form is wired for static hosting with Netlify-compatible markup. Replace the LinkedIn URL with your exact profile URL before final deployment."
+          copy="The form is wired for static hosting with Netlify-compatible markup. Portfolio documents and certificate downloads are also linked here."
         />
 
         <div className="grid gap-6 lg:grid-cols-[1fr_0.8fr]">
