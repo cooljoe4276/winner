@@ -14,12 +14,19 @@ export const skills = [
     items: ["React", "HTML", "CSS", "JavaScript"],
   },
   {
+    category: "Tools",
+    items: ["Git", "GitHub"],
+  },
+];
+
+export const learningNow = [
+  {
     category: "Backend",
     items: ["Node.js", "REST APIs", "Firebase", "Database Integration"],
   },
   {
-    category: "Tools",
-    items: ["Git", "GitHub", "Framer Motion", "Deployment Workflows"],
+    category: "Product Tools",
+    items: ["Framer Motion", "Deployment Workflows"],
   },
   {
     category: "Security",
@@ -29,36 +36,30 @@ export const skills = [
 
 export const projects = [
   {
-    name: "Student Productivity Tool",
+    name: "NACOS Student Platform",
     description:
-      "A task-focused student platform designed to help users manage coursework, deadlines, and productivity flows with a clean dashboard experience.",
-    tech: ["React", "Firebase", "Tailwind CSS"],
-    live: "https://winner-nwaeme.netlify.app/",
-    github: "https://github.com/cooljoe4276/winner",
+      "Developed a fully responsive user interface for a student platform, collaborated with a team using GitHub for version control and project management, and improved user experience across devices.",
+    bullets: [
+      "Developed a fully responsive user interface for a student platform",
+      "Collaborated with a team using GitHub for version control and project management",
+      "Ensured cross-device compatibility and improved user experience",
+    ],
+    tech: ["HTML", "CSS", "JavaScript", "GitHub"],
+    live: "https://nacos-frontend.vercel.app/student/dashboard",
+    github: "https://github.com/NACOS-ANCHOR-UNIVERSITY/Nacos-Anchor-Platform-frontend",
   },
   {
-    name: "AI Content Generator",
+    name: "Library Management System",
     description:
-      "An AI-assisted content workflow concept for generating structured writing outputs, landing copy, and idea drafts with speed and consistency.",
-    tech: ["React", "APIs", "Node.js"],
-    live: "https://winner-nwaeme.netlify.app/",
-    github: "https://github.com/cooljoe4276/winner",
-  },
-  {
-    name: "Developer Portfolio System",
-    description:
-      "A premium personal brand site engineered to present technical skill, startup ambition, and product thinking in a strong, modern format.",
-    tech: ["React", "Framer Motion", "Tailwind CSS"],
-    live: "https://winner-nwaeme.netlify.app/",
-    github: "https://github.com/cooljoe4276/winner",
-  },
-  {
-    name: "Real-World Platform Concept",
-    description:
-      "A scalable platform direction built around practical African market problems, with product ideas spanning fintech, e-commerce, and digital infrastructure.",
-    tech: ["React", "Node.js", "APIs"],
-    live: "https://winner-nwaeme.netlify.app/",
-    github: "https://github.com/cooljoe4276/winner",
+      "Designed and implemented a clean and intuitive interface for a library system with strong usability, simple navigation, and a layout structured for future growth.",
+    bullets: [
+      "Designed and implemented a clean and intuitive interface",
+      "Structured the system for easy navigation and usability",
+      "Focused on scalable layout for future improvements",
+    ],
+    tech: ["HTML", "CSS", "UI Design"],
+    live: "#",
+    github: "#",
   },
 ];
 

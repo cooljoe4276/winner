@@ -1,7 +1,15 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Loader from "./components/Loader";
-import { certificates, journey, projects, skills, socialLinks } from "./data";
+import TicTacToe from "./components/TicTacToe";
+import {
+  certificates,
+  journey,
+  learningNow,
+  projects,
+  skills,
+  socialLinks,
+} from "./data";
 
 const windowAnimation = {
   initial: { opacity: 0, y: 30 },
@@ -38,10 +46,39 @@ function SectionLabel({ eyebrow, title, copy }) {
 
 export default function App() {
   const [loading, setLoading] = useState(true);
+  const [timeDisplay, setTimeDisplay] = useState("");
+  const [dateDisplay, setDateDisplay] = useState("");
 
   useEffect(() => {
     const timer = window.setTimeout(() => setLoading(false), 1000);
     return () => window.clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    const updateClock = () => {
+      const now = new Date();
+      setTimeDisplay(
+        new Intl.DateTimeFormat("en-NG", {
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+          hour12: false,
+          timeZone: "Africa/Lagos",
+        }).format(now),
+      );
+      setDateDisplay(
+        new Intl.DateTimeFormat("en-NG", {
+          weekday: "short",
+          day: "numeric",
+          month: "short",
+          timeZone: "Africa/Lagos",
+        }).format(now),
+      );
+    };
+
+    updateClock();
+    const interval = window.setInterval(updateClock, 1000);
+    return () => window.clearInterval(interval);
   }, []);
 
   const featuredCertificate = certificates.find((item) => item.image);
@@ -72,10 +109,15 @@ export default function App() {
           <nav className="os-topbar-nav">
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
+            <a href="#game">Game</a>
             <a href="#projects">Projects</a>
             <a href="#certificates">Certificates</a>
             <a href="#contact">Contact</a>
           </nav>
+          <div className="os-topbar-clock">
+            <span>{dateDisplay}</span>
+            <strong>{timeDisplay}</strong>
+          </div>
         </header>
 
         <div className="os-layout">
@@ -87,6 +129,10 @@ export default function App() {
                 Building useful interfaces, scalable systems, and the long-term
                 foundation for a global technology ecosystem.
               </p>
+              <div className="os-sidebar-pulse">
+                <span className="os-pulse-dot" />
+                System online
+              </div>
             </div>
 
             <div className="os-sidebar-card">
@@ -126,8 +172,8 @@ export default function App() {
                   </p>
                   <h2 className="os-hero-name">Winner Konrinayo Nwaeme</h2>
                   <p className="os-hero-role">
-                    I create responsive interfaces and contribute to digital
-                    platforms that make student experiences simpler and clearer.
+                    Building scalable digital platforms for Africa with cleaner
+                    systems, stronger interfaces, and founder-level ambition.
                   </p>
                   <p className="os-copy mt-5">
                     I am a Computer Science student at Anchor University, Lagos,
@@ -162,6 +208,10 @@ export default function App() {
                       <span>Core Aim</span>
                       <strong>Build systems with long-term commercial value</strong>
                     </div>
+                  </div>
+                  <div className="os-hero-signal">
+                    <span>Local time</span>
+                    <strong>{timeDisplay}</strong>
                   </div>
                 </div>
               </div>
@@ -218,21 +268,44 @@ export default function App() {
                 <section id="skills">
                   <SectionLabel
                     eyebrow="Skills"
-                    title="Technical strengths and working style"
+                    title="Current skills and the next tools I am learning"
                   />
-                  <div className="os-stack-grid">
-                    {skills.map((group) => (
-                      <div key={group.category} className="os-card">
-                        <p className="os-card-label">{group.category}</p>
-                        <div className="os-pill-group">
-                          {group.items.map((item) => (
-                            <span key={item} className="os-pill">
-                              {item}
-                            </span>
-                          ))}
-                        </div>
+                  <div className="os-skills-layout">
+                    <div className="os-card">
+                      <p className="os-card-label">Current Skills</p>
+                      <div className="os-stack-grid mt-4">
+                        {skills.map((group) => (
+                          <div key={group.category} className="os-mini-card">
+                            <p className="os-card-label">{group.category}</p>
+                            <div className="os-pill-group">
+                              {group.items.map((item) => (
+                                <span key={item} className="os-pill">
+                                  {item}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        ))}
                       </div>
-                    ))}
+                    </div>
+
+                    <div className="os-card">
+                      <p className="os-card-label">Things I Need To Learn</p>
+                      <div className="os-stack-grid mt-4">
+                        {learningNow.map((group) => (
+                          <div key={group.category} className="os-mini-card">
+                            <p className="os-card-label">{group.category}</p>
+                            <div className="os-pill-group">
+                              {group.items.map((item) => (
+                                <span key={item} className="os-pill os-pill-muted">
+                                  {item}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </section>
               </WindowFrame>
@@ -256,18 +329,36 @@ export default function App() {
               </WindowFrame>
             </div>
 
+            <WindowFrame title="Game Room" className="os-window-wide">
+              <section id="game">
+                <SectionLabel
+                  eyebrow="Interactive Lab"
+                  title="A small game built into the portfolio workspace"
+                  copy="A polished X and O experience against the computer adds personality and shows interactive frontend thinking inside the portfolio itself."
+                />
+                <TicTacToe />
+              </section>
+            </WindowFrame>
+
             <WindowFrame title="Projects" className="os-window-wide">
               <section id="projects">
                 <SectionLabel
-                  eyebrow="Projects"
-                  title="Work that reflects frontend and interface experience"
-                  copy="This keeps the earlier project storytelling while fitting it into the operating-system shell."
+                  eyebrow="Project Experience"
+                  title="Projects I have worked on"
+                  copy="Real interface work built through academic projects, teamwork, and practical product thinking."
                 />
                 <div className="os-project-grid">
                   {projects.map((project) => (
                     <article key={project.name} className="os-project-card">
                       <p className="os-card-label">{project.name}</p>
                       <p className="os-copy">{project.description}</p>
+                      {project.bullets ? (
+                        <ul className="os-project-list">
+                          {project.bullets.map((bullet) => (
+                            <li key={bullet}>{bullet}</li>
+                          ))}
+                        </ul>
+                      ) : null}
                       <div className="os-pill-group mt-4">
                         {project.tech.map((tech) => (
                           <span key={tech} className="os-pill">
@@ -276,12 +367,16 @@ export default function App() {
                         ))}
                       </div>
                       <div className="os-link-row">
-                        <a href={project.live} target="_blank" rel="noreferrer">
-                          Live Demo
-                        </a>
-                        <a href={project.github} target="_blank" rel="noreferrer">
-                          GitHub
-                        </a>
+                        {project.live !== "#" ? (
+                          <a href={project.live} target="_blank" rel="noreferrer">
+                            Live Demo
+                          </a>
+                        ) : null}
+                        {project.github !== "#" ? (
+                          <a href={project.github} target="_blank" rel="noreferrer">
+                            GitHub
+                          </a>
+                        ) : null}
                       </div>
                     </article>
                   ))}
@@ -396,13 +491,14 @@ export default function App() {
         </div>
 
         <footer className="os-dock">
-          <span className="os-dock-start">⊞</span>
+          <span className="os-dock-start">Start</span>
           <a href="#about">About</a>
           <a href="#skills">Skills</a>
+          <a href="#game">Game</a>
           <a href="#projects">Projects</a>
           <a href="#certificates">Files</a>
           <a href="#contact">Contact</a>
-          <span className="os-dock-time">19:00</span>
+          <span className="os-dock-time">{timeDisplay || "00:00:00"}</span>
         </footer>
       </motion.div>
     </>
