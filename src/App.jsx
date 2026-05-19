@@ -56,11 +56,14 @@ export default function App() {
         transition={{ duration: 0.45, ease: "easeOut" }}
         className="os-desktop"
       >
+        <div className="os-wallpaper-glow os-wallpaper-glow-left" />
+        <div className="os-wallpaper-glow os-wallpaper-glow-right" />
+
         <header className="os-topbar">
           <div className="os-topbar-left">
             <span className="os-brand-badge">WN</span>
             <div>
-              <p className="os-topbar-name">Winner Nwaeme OS</p>
+              <p className="os-topbar-name">Winner Nwaeme</p>
               <p className="os-topbar-subtitle">
                 Full-Stack Developer | Future Founder
               </p>
@@ -78,7 +81,7 @@ export default function App() {
         <div className="os-layout">
           <aside className="os-sidebar">
             <div className="os-sidebar-card">
-              <p className="os-sidebar-label">System Identity</p>
+              <p className="os-sidebar-label">Profile</p>
               <h1>Winner Konrinayo Nwaeme</h1>
               <p>
                 Building useful interfaces, scalable systems, and the long-term
@@ -87,7 +90,7 @@ export default function App() {
             </div>
 
             <div className="os-sidebar-card">
-              <p className="os-sidebar-label">Quick Access</p>
+              <p className="os-sidebar-label">System Summary</p>
               <ul className="os-sidebar-list">
                 <li>B.Sc. Computer Science, Anchor University</li>
                 <li>Expected graduation: 2027</li>
@@ -97,7 +100,7 @@ export default function App() {
             </div>
 
             <div className="os-sidebar-card">
-              <p className="os-sidebar-label">Links</p>
+              <p className="os-sidebar-label">Pinned Links</p>
               <div className="os-link-stack">
                 {socialLinks.map((item) => (
                   <a
@@ -115,7 +118,7 @@ export default function App() {
           </aside>
 
           <main className="os-main">
-            <WindowFrame title="hero.exe" className="os-window-hero">
+            <WindowFrame title="Home" className="os-window-hero">
               <div className="os-hero-grid">
                 <div>
                   <p className="os-eyebrow">
@@ -144,7 +147,7 @@ export default function App() {
                 </div>
 
                 <div className="os-status-panel">
-                  <p className="os-sidebar-label">Mission</p>
+                  <p className="os-sidebar-label">Mission Control</p>
                   <h3>Building scalable digital platforms for Africa and beyond</h3>
                   <div className="os-status-grid">
                     <div>
@@ -164,7 +167,7 @@ export default function App() {
               </div>
             </WindowFrame>
 
-            <WindowFrame title="about.app" className="os-window-wide" >
+            <WindowFrame title="About" className="os-window-wide">
               <section id="about">
                 <SectionLabel
                   eyebrow="About Me"
@@ -211,7 +214,7 @@ export default function App() {
             </WindowFrame>
 
             <div className="os-window-grid">
-              <WindowFrame title="skills.panel">
+              <WindowFrame title="Skills">
                 <section id="skills">
                   <SectionLabel
                     eyebrow="Skills"
@@ -234,7 +237,7 @@ export default function App() {
                 </section>
               </WindowFrame>
 
-              <WindowFrame title="journey.logs">
+              <WindowFrame title="Journey">
                 <section id="journey">
                   <SectionLabel
                     eyebrow="Journey"
@@ -253,7 +256,7 @@ export default function App() {
               </WindowFrame>
             </div>
 
-            <WindowFrame title="projects.workspace" className="os-window-wide">
+            <WindowFrame title="Projects" className="os-window-wide">
               <section id="projects">
                 <SectionLabel
                   eyebrow="Projects"
@@ -286,7 +289,7 @@ export default function App() {
               </section>
             </WindowFrame>
 
-            <WindowFrame title="certificates.archive" className="os-window-wide">
+            <WindowFrame title="Certificates" className="os-window-wide">
               <section id="certificates">
                 <SectionLabel
                   eyebrow="Certificates"
@@ -331,7 +334,7 @@ export default function App() {
             </WindowFrame>
 
             <div className="os-window-grid">
-              <WindowFrame title="vision.sys">
+              <WindowFrame title="Vision">
                 <section id="vision">
                   <SectionLabel
                     eyebrow="My Vision"
@@ -353,7 +356,7 @@ export default function App() {
                 </section>
               </WindowFrame>
 
-              <WindowFrame title="contact.channel">
+              <WindowFrame title="Contact">
                 <section id="contact">
                   <SectionLabel
                     eyebrow="Contact"
@@ -393,11 +396,13 @@ export default function App() {
         </div>
 
         <footer className="os-dock">
+          <span className="os-dock-start">⊞</span>
           <a href="#about">About</a>
           <a href="#skills">Skills</a>
           <a href="#projects">Projects</a>
           <a href="#certificates">Files</a>
           <a href="#contact">Contact</a>
+          <span className="os-dock-time">19:00</span>
         </footer>
       </motion.div>
     </>
